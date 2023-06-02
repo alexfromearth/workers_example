@@ -1,0 +1,11 @@
+{
+  "name": "workers_example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alexey Shirokov <shirokovaloff@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "threads": "^1.7.0"
+  }
+}
