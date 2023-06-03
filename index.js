@@ -1,9 +1,13 @@
 import { spawn, Thread, Worker } from "threads"
 
-export default async function invokeMainWorker() {
-    const testWorker = await spawn(new Worker(new URL('./workers/test.js', import.meta.url)));
+export async function invokeMainWorker() {
+    const testWorker = await spawn(
+        new Worker(new URL('./workers/worker.js', import.meta.url), {
+            type: 'module',
+        })
+    );
 
-    console.log("Hashed password:", testWorker.testCallback())
+    console.log('result:', await testWorker.callback());
 
-    await Thread.terminate(testWorker)
+    await Thread.terminate(testWorker);
 }
