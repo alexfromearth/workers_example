@@ -21,6 +21,8 @@ module.exports = {
   },
   mode: 'production',
   plugins: [
-    new ThreadsPlugin()
+    new ThreadsPlugin({
+      globalObject: 'self'
+    })
   ]
 };
