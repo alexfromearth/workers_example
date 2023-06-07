@@ -1,5 +1,4 @@
 const path = require('path');
-const ThreadsPlugin = require('threads-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -20,9 +19,4 @@ module.exports = {
     ],
   },
   mode: 'production',
-  plugins: [
-    new ThreadsPlugin({
-      globalObject: 'self'
-    })
-  ]
 };
